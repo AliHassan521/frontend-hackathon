@@ -131,5 +131,23 @@
     }
   });
 
+  gsap.from(".intro-info h2", { duration: 1, y: -50, opacity: 0, ease: "bounce" });
+  gsap.from(".intro-info p", { duration: 1, y: 50, opacity: 0, delay: 0.5 });
+  gsap.from(".btn-get-started", { duration: 1, scale: 0.5, opacity: 0, delay: 1 });
+  gsap.from(".intro-img img", { duration: 1, x: 100, opacity: 0, delay: 1.5 });
+
+
+  // Dark/Light Mode Toggle
+  document.addEventListener('DOMContentLoaded', function() {
+    const themeToggle = document.querySelectorAll('#theme-toggle');
+    themeToggle.forEach(toggle => {
+      toggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.body.classList.toggle('dark-mode');
+        themeToggle.forEach(t => t.style.display = t.style.display === 'none' ? 'inline' : 'none');
+      });
+    });
+  });
+
 })(jQuery);
 
